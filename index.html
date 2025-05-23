@@ -67,6 +67,37 @@
             margin-bottom: 20px;
         }
 
+        /* Equipos con imágenes */
+        .team-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .team-item {
+            flex: 1 1 150px;
+            background: #e6f0ff;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .team-item:hover {
+            transform: scale(1.05);
+        }
+
+        .team-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        /* Jugadores */
         .players {
             display: flex;
             gap: 20px;
@@ -79,6 +110,12 @@
             border-radius: 8px;
             flex: 1 1 200px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .player-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
 
         footer {
@@ -104,19 +141,41 @@
         <section id="historia">
             <h2>Historia del Fútbol</h2>
             <p>
-                El fútbol es uno de los deportes más populares del mundo. Surgió en Inglaterra en el siglo XIX y desde entonces ha crecido hasta convertirse en un fenómeno global.
+                El fútbol, conocido también como "el deporte rey", tiene sus raíces en Inglaterra durante el siglo XIX. Su popularidad creció rápidamente gracias a su sencillez y el espíritu competitivo que fomentaba.
+                Desde partidos informales hasta la creación de ligas profesionales, el fútbol se ha convertido en un fenómeno global que une a millones de personas alrededor del mundo. 
+                La FIFA, fundada en 1904, ha sido fundamental para organizar competiciones internacionales, como la Copa Mundial, que se celebra cada cuatro años y es uno de los eventos deportivos más vistos en la historia.
             </p>
         </section>
 
         <section id="equipos">
             <h2>Equipos Famosos</h2>
-            <ul>
-                <li>FC Barcelona</li>
-                <li>Real Madrid</li>
-                <li>Manchester United</li>
-                <li>Bayern Múnich</li>
-                <li>Juventus</li>
-            </ul>
+            <div class="team-list">
+                <div class="team-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona" />
+                    <p><strong>FC Barcelona</strong></p>
+                    <p>Fundado en 1899, este club español es famoso por su estilo de juego ofensivo y su academia juvenil "La Masia". Ha ganado múltiples títulos nacionales e internacionales.</p>
+                </div>
+                <div class="team-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid" />
+                    <p><strong>Real Madrid</strong></p>
+                    <p>Uno de los clubes más exitosos del mundo, con numerosos títulos de La Liga y Champions League. Conocido por tener grandes estrellas a lo largo de su historia.</p>
+                </div>
+                <div class="team-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United" />
+                    <p><strong>Manchester United</strong></p>
+                    <p>Este equipo inglés ha dominado la Premier League en varias épocas y es famoso por su legado de grandes jugadores y entrenadores legendarios.</p>
+                </div>
+                <div class="team-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="Bayern Múnich" />
+                    <p><strong>Bayern Múnich</strong></p>
+                    <p>El club más exitoso de Alemania, reconocido por su consistencia en competiciones nacionales e internacionales.</p>
+                </div>
+                <div class="team-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/7/7f/Juventus_FC_2017_logo.svg" alt="Juventus" />
+                    <p><strong>Juventus</strong></p>
+                    <p>Club italiano con una rica historia y una gran cantidad de títulos de Serie A. Es conocido por su defensa sólida y su competitividad.</p>
+                </div>
+            </div>
         </section>
 
         <section id="jugadores">
@@ -124,15 +183,24 @@
             <div class="players">
                 <article class="player-card">
                     <h3>Lionel Messi</h3>
-                    <p>Considerado uno de los mejores jugadores de todos los tiempos.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Lionel_Messi_20180626.jpg" alt="Lionel Messi" />
+                    <p>
+                        Considerado uno de los mejores jugadores de todos los tiempos, Messi ha maravillado al mundo con su increíble talento, visión y precisión en el campo. Su paso por el FC Barcelona marcó una era dorada llena de títulos y récords.
+                    </p>
                 </article>
                 <article class="player-card">
                     <h3>Cristiano Ronaldo</h3>
-                    <p>Reconocido por su físico y habilidad goleadora.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" />
+                    <p>
+                        Conocido por su físico imponente, velocidad y capacidad goleadora, Cristiano Ronaldo ha brillado en varios de los clubes más grandes del mundo, incluyendo Manchester United, Real Madrid y Juventus. Es un símbolo de dedicación y profesionalismo.
+                    </p>
                 </article>
                 <article class="player-card">
                     <h3>Pelé</h3>
-                    <p>Icono histórico del fútbol brasileño.</p>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Pelé_1960.jpg" alt="Pelé" />
+                    <p>
+                        Ícono del fútbol brasileño y mundial, Pelé ganó tres Copas Mundiales y fue famoso por su técnica, creatividad y habilidad para marcar goles. Su legado perdura como uno de los más grandes en la historia del deporte.
+                    </p>
                 </article>
             </div>
         </section>
