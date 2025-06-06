@@ -1,216 +1,167 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Fútbol Fan Info</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
-            color: #222;
-            line-height: 1.6;
-            padding: 20px;
-        }
-
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #004080;
-            margin-bottom: 15px;
-        }
-
-        ul {
-            margin-left: 20px;
-            margin-bottom: 20px;
-        }
-
-        /* Equipos con imágenes */
-        .team-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .team-item {
-            flex: 1 1 150px;
-            background: #e6f0ff;
-            border-radius: 8px;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.2s ease;
-        }
-
-        .team-item:hover {
-            transform: scale(1.05);
-        }
-
-        .team-item img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            margin-bottom: 10px;
-        }
-
-        /* Jugadores */
-        .players {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .player-card {
-            background: #e6f0ff;
-            padding: 15px;
-            border-radius: 8px;
-            flex: 1 1 200px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .player-card img {
-            width: 100%;
-            max-height: 220px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            color: #555;
-        }
-    </style>
+<title>Tienda</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
 </head>
-<body>
-    <header>
-        <h1>Pasión por el Fútbol</h1>
-        <nav>
-            <ul>
-                <li><a href="#historia">Historia</a></li>
-                <li><a href="#equipos">Equipos</a></li>
-                <li><a href="#jugadores">Jugadores</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="w3-content" style="max-width:1200px">
 
-    <main>
-        <section id="historia">
-            <h2>Historia del Fútbol</h2>
-            <p>
-                El fútbol, conocido también como "el deporte rey", tiene sus raíces en Inglaterra durante el siglo XIX. Su popularidad creció rápidamente gracias a su sencillez y el espíritu competitivo que fomentaba.
-                Desde partidos informales hasta la creación de ligas profesionales, el fútbol se ha convertido en un fenómeno global que une a millones de personas alrededor del mundo. 
-                La FIFA, fundada en 1904, ha sido fundamental para organizar competiciones internacionales, como la Copa Mundial, que se celebra cada cuatro años y es uno de los eventos deportivos más vistos en la historia.
-            </p>
-        </section>
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <h3 class="w3-wide"><b>FC Barcelona</b></h3>
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Camisetas</a>
+    <a href="#" class="w3-bar-item w3-button">Pantalones</a>
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Accesorios <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Bufandas</a>
+    </div>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Inicio</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Plantilla</a> 
+</nav>
 
-        <section id="equipos">
-            <h2>Equipos Famosos</h2>
-            <div class="team-list">
-                <div class="team-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/FC_Barcelona_%282003%29.svg/1024px-FC_Barcelona_%282003%29.svg.png" alt="FC Barcelona" />
-                    <p><strong>FC Barcelona</strong></p>
-                    <p>Fundado en 1899, este club español es famoso por su estilo de juego ofensivo y su academia juvenil "La Masia". Ha ganado múltiples títulos nacionales e internacionales.</p>
-                </div>
-                <div class="team-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/56/Real_Madrid_CF.svg/1024px-Real_Madrid_CF.svg.png" alt="Real Madrid" />
-                    <p><strong>Real Madrid</strong></p>
-                    <p>Uno de los clubes más exitosos del mundo, con numerosos títulos de La Liga y Champions League. Conocido por tener grandes estrellas a lo largo de su historia.</p>
-                </div>
-                <div class="team-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Manchester_United_FC_crest.svg/1024px-Manchester_United_FC_crest.svg.png" alt="Manchester United" />
-                    <p><strong>Manchester United</strong></p>
-                    <p>Este equipo inglés ha dominado la Premier League en varias épocas y es famoso por su legado de grandes jugadores y entrenadores legendarios.</p>
-                </div>
-                <div class="team-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/FC_Bayern_München_logo_%282017%29.svg/1024px-FC_Bayern_München_logo_%282017%29.svg.png" alt="Bayern Múnich" />
-                    <p><strong>Bayern Múnich</strong></p>
-                    <p>El club más exitoso de Alemania, reconocido por su consistencia en competiciones nacionales e internacionales.</p>
-                </div>
-                <div class="team-item">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Juventus_FC_2017_logo.svg/1024px-Juventus_FC_2017_logo.svg.png" alt="Juventus" />
-                    <p><strong>Juventus</strong></p>
-                    <p>Club italiano con una rica historia y una gran cantidad de títulos de Serie A. Es conocido por su defensa sólida y su competitividad.</p>
-                </div>
-            </div>
-        </section>
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
 
-        <section id="jugadores">
-            <h2>Jugadores Legendarios</h2>
-            <div class="players">
-                <article class="player-card">
-                    <h3>Lionel Messi</h3>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Lionel_Messi_20180626.jpg" alt="Lionel Messi" />
-                    <p>
-                        Considerado uno de los mejores jugadores de todos los tiempos, Messi ha maravillado al mundo con su increíble talento, visión y precisión en el campo. Su paso por el FC Barcelona marcó una era dorada llena de títulos y récords.
-                    </p>
-                </article>
-                <article class="player-card">
-                    <h3>Cristiano Ronaldo</h3>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo" />
-                    <p>
-                        Conocido por su físico imponente, velocidad y capacidad goleadora, Cristiano Ronaldo ha brillado en varios de los clubes más grandes del mundo, incluyendo Manchester United, Real Madrid y Juventus. Es un símbolo de dedicación y profesionalismo.
-                    </p>
-                </article>
-                <article class="player-card">
-                    <h3>Pelé</h3>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Pelé_1960.jpg" alt="Pelé" />
-                    <p>
-                        Ícono del fútbol brasileño y mundial, Pelé ganó tres Copas Mundiales y fue famoso por su técnica, creatividad y habilidad para marcar goles. Su legado perdura como uno de los más grandes en la historia del deporte.
-                    </p>
-                </article>
-            </div>
-        </section>
-    </main>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-    <footer>
-        <p>© 2025 Página de Fútbol - Hecho por Antoñico</p>
-    </footer>
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:250px">
+
+  <!-- Push down content on small screens -->
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Top header -->
+  <header class="w3-container w3-xlarge">
+    <p class="w3-left">Accesorios</p>
+    <p class="w3-right">
+      <i class="fa fa-shopping-cart w3-margin-right"></i>
+      <i class="fa fa-search"></i>
+    </p>
+  </header>
+
+  <!-- Image header -->
+  <div class="w3-display-container w3-container">
+    <img src="/w3images/jeans.jpg" alt="Jeans" style="width:100%">
+    <div class="w3-display-topleft w3-text-white" style="padding:24px 48px">
+      <h1 class="w3-jumbo w3-hide-small">Nueva Temporada</h1>
+      <h1 class="w3-hide-large w3-hide-medium">Nueva Temporada</h1>
+      <p><a href="#jeans" class="w3-button w3-black w3-padding-large w3-large">COMPRA YA</a></p>
+    </div>
+  </div>
+
+  <div class="w3-container w3-text-grey" id="jeans">
+    <p>4 items</p>
+  </div>
+
+  <!-- Product grid -->
+  <div class="w3-row w3-grayscale">
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans1.jpg" style="width:100%">
+        <p>Ripped Skinny Jeans<br><b>$24.99</b></p>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <div class="w3-display-container">
+          <img src="/w3images/jeans2.jpg" style="width:100%">
+          <span class="w3-tag w3-display-topleft">New</span>
+          <div class="w3-display-middle w3-display-hover">
+            <button class="w3-button w3-black">Buy now <i class="fa fa-shopping-cart"></i></button>
+          </div>
+        </div>
+        <p>Mega Ripped Jeans<br><b>$19.99</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans3.jpg" style="width:100%">
+        <p>Washed Skinny Jeans<br><b>$20.50</b></p>
+      </div>
+    </div>
+
+    <div class="w3-col l3 s6">
+      <div class="w3-container">
+        <img src="/w3images/jeans4.jpg" style="width:100%">
+        <p>Vintage Skinny Jeans<br><b>$14.99</b></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subscribe section -->
+  <div class="w3-container w3-black w3-padding-32">
+    <h1>Subscribe</h1>
+    <p>To get special offers and VIP treatment:</p>
+    <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+    <button type="button" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+  </div>
+  
+  <!-- Footer -->
+
+  <div class="w3-black w3-center w3-padding-24">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-opacity">w3.css</a></div>
+
+  <!-- End page content -->
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
 </body>
 </html>
